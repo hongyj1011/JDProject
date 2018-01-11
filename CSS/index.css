@@ -85,6 +85,7 @@ body {
   height: 30px;
   line-height: 30px;
   vertical-align: top;
+  font-size: 14px;
 }
 .location ul {
   width: 300px;
@@ -192,6 +193,7 @@ body {
   border-bottom: 1px solid #E3E4E5;
 }
 .customService {
+  margin-top: 10px;
   width: 190px;
 }
 .customService li {
@@ -313,7 +315,7 @@ body {
 .hotdot {
   position: absolute;
   left: 310px;
-  top: 60px;
+  top: 70px;
 }
 .hotdot a {
   margin-left: 10px;
@@ -349,7 +351,7 @@ body {
 }
 #myBuys {
   color: red;
-  z-index: 0;
+  z-index: 2;
   position: absolute;
   left: 950px;
   top: 25px;
@@ -381,7 +383,7 @@ body {
   text-align: center;
   color: white;
   top: 3px;
-  left: 134px;
+  left: 110px;
   background-color: red;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -700,7 +702,7 @@ body {
   color: red;
 }
 #banner .bConten4 .user-vip {
-  margin-top: 10px;
+  margin-top: 20px;
   width: 100%;
   text-align: center;
 }
@@ -725,7 +727,7 @@ body {
   background-color: red;
 }
 #banner .pubNotice {
-  margin-top: 10px;
+  margin-top: 30px;
   position: relative;
 }
 #banner .pubNotice .pubHead a {
@@ -743,8 +745,11 @@ body {
   right: 0px;
   top: 4px;
 }
+#banner .pubNotice .pubBody {
+  margin-top: 20px;
+}
 #banner .pubNotice .pubBody ul {
-  margin: 10px 5px;
+  margin: 20px 5px;
 }
 #banner .pubNotice .pubBody a {
   width: 160px;
@@ -766,16 +771,17 @@ body {
   width: 27px;
   transition: .5s;
   background-color: red;
-  top: 25px;
+  top: 20px;
   left: 15px;
 }
 #banner .service-List ul {
   margin: 5px;
+  padding-top: 10px;
   border-top: 1px solid #CCCCCC;
 }
 #banner .service-List li {
   float: left;
-  margin-top: 10px;
+  margin-top: 15px;
   width: 45px;
 }
 #banner .service-List li a:hover i {
