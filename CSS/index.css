@@ -420,18 +420,18 @@ body {
 }
 #banner .banner-left a:first-child {
   position: absolute;
-  left: -130px;
+  left: -126px;
   width: 250px;
   height: 480px;
 }
 #banner .banner-left a:last-child {
-  z-index: 1;
+  z-index: 2;
   overflow: hidden;
   width: 0px;
   height: 480px;
   transition: width 1s;
   position: absolute;
-  left: 118px;
+  left: 124px;
 }
 #banner .bConten1 {
   position: relative;
@@ -449,13 +449,13 @@ body {
   line-height: 28px;
   color: #808080;
 }
-#banner .bConten1 li:hover {
+#banner .bConten1 .hover {
   background-color: #FF0000;
   color: white;
 }
 #banner .bConten1 .pop-detail {
   display: none;
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   left: 190px;
   top: 0px;
@@ -479,8 +479,14 @@ body {
   font-size: 12px;
   font-weight: 300;
   padding: 4px 10px;
-  background-color: #4E4E4E;
+  background-color: #333;
   margin-left: 10px;
+}
+#banner .bConten1 .pop-detail .detail-left .leftDetail-h a:hover {
+  background-color: #5c5251;
+}
+#banner .bConten1 .pop-detail .detail-left .leftDetail-b a:hover {
+  color: #FF0000;
 }
 #banner .bConten1 .pop-detail .detail-left .leftDetail-b dt {
   display: inline-block;
@@ -492,6 +498,7 @@ body {
 #banner .bConten1 .pop-detail .detail-left .leftDetail-b dt a {
   color: #363634;
   font-size: 12px;
+  font-weight: bold;
 }
 #banner .bConten1 .pop-detail .detail-left .leftDetail-b dl {
   margin-left: 110px;
@@ -502,10 +509,12 @@ body {
   float: left;
 }
 #banner .bConten1 .pop-detail .detail-left .leftDetail-b dd a {
+  display: inline-block;
   font-size: 12px;
   border-left: 1px solid #CCCCCC;
   color: #4E4E4E;
   padding: 0px 10px;
+  margin-bottom: 5px;
 }
 #banner .bConten1 .pop-detail .detail-right {
   float: right;
@@ -517,82 +526,24 @@ body {
 #banner .bConten2 {
   margin-right: 10px;
   position: relative;
+}
+#banner .bConten2 #banner-swiper {
   width: 590px;
   height: 480px;
 }
-#banner .bConten2 .jssorb051 .i {
-  position: absolute;
-  cursor: pointer;
+#banner .bConten2 #banner-swiper .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
 }
-#banner .bConten2 .jssorb051 .i .b {
-  fill: #fff;
-  fill-opacity: 0.5;
-}
-#banner .bConten2 .jssorb051 .i:hover .b {
-  fill-opacity: .7;
-}
-#banner .bConten2 .jssorb051 .iav .b {
-  fill-opacity: 1;
-}
-#banner .bConten2 .jssorb051 .i.idn {
-  opacity: .3;
-}
-#banner .bConten2 .jssora051 {
-  display: block;
-  position: absolute;
-  cursor: pointer;
-}
-#banner .bConten2 .jssora051 .a {
-  fill: none;
-  stroke: #fff;
-  stroke-width: 360;
-  stroke-miterlimit: 10;
-}
-#banner .bConten2 .jssora051:hover {
-  opacity: .8;
-}
-#banner .bConten2 .jssora051.jssora051dn {
-  opacity: .5;
-}
-#banner .bConten2 .jssora051.jssora051ds {
-  opacity: .3;
-  pointer-events: none;
-}
-#banner .bConten2 #jssor_1 {
-  position: relative;
-  margin: 0 auto;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  visibility: hidden;
-}
-#banner .bConten2 #jssor_1 .slides {
-  cursor: default;
-  position: relative;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-#banner .bConten2 #jssor_1 .navigator {
-  position: absolute;
-  bottom: 12px;
-  right: 12px;
-}
-#banner .bConten2 #jssor_1 .arrowleft {
-  width: 55px;
-  height: 55px;
-  top: 0px;
-  left: 25px;
-}
-#banner .bConten2 #jssor_1 .arrowright {
-  width: 55px;
-  height: 55px;
-  top: 0px;
-  right: 25px;
+#banner .bConten2 #banner-swiper .swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
 }
 #banner .bConten3 {
   width: 190px;
@@ -790,4 +741,167 @@ body {
 #banner .service-List li i {
   font-size: 30px;
   color: #D3B850;
+}
+#secKill {
+  margin-top: 30px;
+}
+#secKill a {
+  color: white;
+}
+#secKill .skItem {
+  width: 190px;
+  height: 275px;
+  display: block;
+  position: relative;
+}
+#secKill .sk-head {
+  background-color: #e83632;
+  text-align: center;
+}
+#secKill .sk-head .head-title {
+  font-size: 30px;
+  font-weight: 300;
+  position: absolute;
+  top: 40px;
+  width: 100%;
+}
+#secKill .sk-head .head-subtitle {
+  position: absolute;
+  top: 90px;
+  width: 100%;
+  font-size: 15px;
+  color: gainsboro;
+}
+#secKill .sk-head .head-icon {
+  position: absolute;
+  top: 120px;
+  width: 100%;
+  text-align: center;
+}
+#secKill .sk-head .head-icon i {
+  font-size: 30px;
+}
+#secKill .sk-head .head-desc {
+  position: absolute;
+  top: 170px;
+  font-size: 15px;
+  width: 100%;
+}
+#secKill .sk-head .cdItem {
+  padding: 5px;
+  font-size: 23px;
+  margin-right: 5px;
+  background-color: black;
+  color: white;
+  display: inline-block;
+}
+#secKill .sk-head .head-time {
+  width: 150px;
+  position: absolute;
+  top: 210px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#secKill .sk-body {
+  background-color: white;
+}
+#secKill .sk-body a {
+  border-right: 1px solid #E0E0E0;
+  width: 200px;
+  box-sizing: border-box;
+}
+#secKill .sk-body img {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#secKill .sk-body p {
+  position: absolute;
+  width: 150px;
+  top: 190px;
+  color: #4E4E4E;
+  left: 50%;
+  transform: translateX(-50%);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#secKill .sk-body #secKill-area {
+  width: 800px;
+  height: 275px;
+  margin: 0;
+}
+#secKill .sk-body .swiper-button-prev,
+#secKill .sk-body .swiper-button-next {
+  background: none;
+}
+#secKill .sk-body .swiper-button-prev i,
+#secKill .sk-body .swiper-button-next i {
+  text-align: center;
+  line-height: 44px;
+  display: inline-block;
+  width: 27px;
+  height: 44px;
+  font-size: 20px;
+  background-color: #969696;
+}
+#secKill .sk-body .swiper-button-prev {
+  left: 0;
+}
+#secKill .sk-body .swiper-button-next {
+  right: 0;
+}
+#secKill .sk-body .sk-price {
+  border: 1px solid red;
+  width: 160px;
+  top: 230px;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+}
+#secKill .sk-body .sk-price .sk-price-item {
+  width: 80px;
+  height: 20px;
+  line-height: 20px;
+  border: none;
+  float: left;
+  text-align: center;
+}
+#secKill .sk-body .sk-price .sk-price-new {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: red;
+  color: white;
+}
+#secKill .sk-body .sk-price .sk-price-origin {
+  font-size: 12px;
+  background-color: white;
+  color: #B5B5B5;
+}
+#secKill .sk-body .sk-price .sk-price-origin span {
+  text-decoration: line-through;
+}
+#secKill .sk-right {
+  background: white;
+  width: 200px;
+  height: 275px;
+}
+#secKill .sk-right #secKill-right {
+  width: 180px;
+  height: 260px;
+  margin-top: 7px;
+}
+#secKill .sk-right .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.2);
+}
+#secKill .sk-right .swiper-pagination-bullet-active {
+  background: #E10006;
+}
+#secKill .sk-right .swiper-slide {
+  text-align: center;
 }
