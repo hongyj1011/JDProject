@@ -570,68 +570,10 @@ body {
   top: -30px;
   transform: translateX(-62%);
 }
-#banner .bConten4 .userIcon .boxF,
-#banner .bConten4 .userIcon .boxS,
-#banner .bConten4 .userIcon .boxT,
-#banner .bConten4 .userIcon .overlay {
-  width: 60px;
-  height: 75px;
-  overflow: hidden;
-}
-#banner .bConten4 .userIcon .boxF,
-#banner .bConten4 .userIcon .boxS {
-  visibility: hidden;
-}
-#banner .bConten4 .userIcon .boxF {
-  transform: rotate(120deg);
-  float: left;
-  margin-left: 10px;
-  -ms-transform: rotate(120deg);
-  -moz-transform: rotate(120deg);
-  -webkit-transform: rotate(120deg);
-}
-#banner .bConten4 .userIcon .boxS {
-  transform: rotate(-60deg);
-  -ms-transform: rotate(-60deg);
-  -moz-transform: rotate(-60deg);
-  -webkit-transform: rotate(-60deg);
-}
-#banner .bConten4 .userIcon .boxT {
-  transform: rotate(-60deg);
-  background: no-repeat 50% center;
-  background-size: 65px 75px;
-  -ms-transform: rotate(-60deg);
-  -moz-transform: rotate(-60deg);
-  -webkit-transform: rotate(-60deg);
-  visibility: visible;
-}
-#banner .bConten4 .userIcon .overlay {
-  transition: all 250ms ease-in-out 0s;
-  display: none;
-  position: relative;
-}
-#banner .bConten4 .userIcon .overlay:hover {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-#banner .bConten4 .userIcon .boxT:hover .overlay {
-  display: block;
-}
-#banner .bConten4 .userIcon .overlay a {
-  display: inline-block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin: -16px 0 0 -16px;
-  border-radius: 3px;
-  background-color: #d3b850;
-  text-align: center;
-  line-height: 32px;
-  width: 32px;
-  height: 32px;
-  text-decoration: none;
-  color: White;
-  font-size: 18px;
-  font-weight: bolder;
+#banner .bConten4 .userIcon img {
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
 }
 #banner .bConten4 .user-login {
   text-align: center;
