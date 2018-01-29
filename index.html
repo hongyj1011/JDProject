@@ -7,10 +7,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="CSS/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="CSS/index.css" />
-		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/template-web.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/jssor.slider-26.8.0.min.js" type="text/javascript" charset="utf-8"></script>
-
+		<link rel="stylesheet" type="text/css" href="CSS/swiper.min.css"/>
+		<script src="js/require.js" data-main="js/requireConfig.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 
 	<body>
@@ -40,7 +38,7 @@
 						<div class="leftDetail-b">
 							<% for(var k=0; k<jsondata[i].content.length;k++){ %>
 							<dl class="clearfix">
-								<dt><a href="javascript:void(0)"><%= jsondata[i].content[k].title%></a></dt>
+								<dt><a href="javascript:void(0)"><%= jsondata[i].content[k].title%> > </a></dt>
 									<% for(var z=0; z<jsondata[i].content[k].message.length;z++){ %>
 										<dd><a href="javascript:void(0)"><%= jsondata[i].content[k].message[z]%></a></dd>
 									<% } %>
@@ -51,21 +49,40 @@
 					</div>
 					<div class="detail-right">
 						<div class="rigthDetail-t">
-							<a href="javascript:void(0)"><img src="images/bannerList/list001.jpg" /></a>
-							<a href="javascript:void(0)"><img src="images/bannerList/list002.jpg" /></a>
-							<a href="javascript:void(0)"><img src="images/bannerList/list003.jpg" /></a>
-							<a href="javascript:void(0)"><img src="images/bannerList/list004.jpg" /></a>
-							<a href="javascript:void(0)"><img src="images/bannerList/list005.jpg" /></a>
-							<a href="javascript:void(0)"><img src="images/bannerList/list006.jpg" /></a>
+							<% for(var n=0; n<jsondata[i].sImgs.length;n++){ %>
+								<a href="javascript:void(0)"><img src="<%= jsondata[i].sImgs[n]%>"/></a>
+							<% } %>
 						</div>
 						<div class="rigthDetail-b">
-							<a href="javascript:void(0)"><img src="images/bannerList/largeList001.jpg" /></a>
-							<a href="javascript:void(0)"><img src="images/bannerList/largeList002.jpg" /></a>
+							<% for(var m=0; m<jsondata[i].bImgs.length;m++){ %>
+								<a href="javascript:void(0)"><img src="<%= jsondata[i].bImgs[m]%>" /></a>
+							<% } %>
 						</div>
 					</div>
 				</div>
 			<% } %>	
 		</script>
+		<script type="text/html" id="secKillModel">
+			<% for(var i=0; i<jsondata.length;i++){ %>
+			<div class="swiper-slide">
+				<a class="skItem" href="#">
+					<img src="<%= jsondata[i].img%>" />
+					<p><%= jsondata[i].title %></p>
+					<div class="sk-price">
+						<span class="sk-price-new sk-price-item">
+							<i>￥</i>
+							<span><%= jsondata[i].newPrice %></span>
+						</span>
+						<span class="sk-price-origin sk-price-item">
+							<i>￥</i>
+							<span><%= jsondata[i].originPrice%></span>
+						</span>
+					</div>
+				</a>
+			</div>
+			<% } %>
+		</script>
+			
 		<!--头部广告-->
 		<div class="headBanner">
 			<div class="container">
@@ -325,46 +342,23 @@
 				</div>
 				<div class="fl bConten2">
 					<!--轮播图-->
-					<div id="jssor_1">
-						<div data-u="slides" class="slides">
-							<div data-p="170.00">
-								<img data-u="image" src="images/001.jpg" />
-							</div>
-							<div data-p="170.00">
-								<img data-u="image" src="images/002.jpg" />
-							</div>
-							<div data-p="170.00">
-								<img data-u="image" src="images/003.jpg" />
-							</div>
-							<div data-p="170.00">
-								<img data-u="image" src="images/004.jpg" />
-							</div>
-							<div data-p="170.00">
-								<img data-u="image" src="images/005.jpg" />
-							</div>
-							<div data-p="170.00">
-								<img data-u="image" src="images/006.jpg" />
-							</div>
+					
+					<div class="swiper-container" id="banner-swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="images/001.jpg" /></div>
+							<div class="swiper-slide"><img src="images/002.jpg" /></div>
+							<div class="swiper-slide"><img src="images/003.jpg" /></div>
+							<div class="swiper-slide"><img src="images/004.jpg" /></div>
+							<div class="swiper-slide"><img src="images/005.jpg" /></div>
+							<div class="swiper-slide"><img src="images/006.jpg" /></div>
 						</div>
-						<!-- Bullet Navigator -->
-						<div data-u="navigator" class="jssorb051 navigator" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
-							<div data-u="prototype" class="i" style="width:16px;height:16px;">
-								<svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-									<circle class="b" cx="8000" cy="8000" r="5800"></circle>
-								</svg>
-							</div>
-						</div>
-						<!-- Arrow Navigator -->
-						<div data-u="arrowleft" class="jssora051 arrowleft" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
-							<svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-								<polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
-							</svg>
-						</div>
-						<div data-u="arrowright" class="jssora051 arrowright" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
-							<svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-								<polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
-							</svg>
-						</div>
+						<!-- 如果需要分页器 -->
+						<div class="swiper-pagination banner-page"></div>
+					
+						<!-- 如果需要导航按钮 -->
+						<div class="swiper-button-prev banner-prev"></div>
+						<div class="swiper-button-next banner-next"></div>
+					
 					</div>
 				</div>
 				<div class="fl bConten3">
@@ -376,15 +370,7 @@
 				</div>
 				<div class="fl bConten4">
 					<div class="userIcon">
-						<div class="boxF">
-							<div class="boxS">
-								<div class="boxT" style="background-image: url(images/no_login.jpg);">
-									<div class="overlay">
-										<a href="#">+</a>
-									</div>
-								</div>
-							</div>
-						</div>
+						<img src="images/no_login.jpg"/>
 					</div>
 					<div class="user-login">
 						<span>
@@ -458,8 +444,60 @@
 				</div>
 			</div>
 		</div>
-
-		<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+		<div id="secKill" class="container clearfix">
+			<div class="fl sk-head">
+				<a href="javascript:void(0)" class="skItem">
+					<div class="head-title">
+						京东秒杀
+					</div>
+					<div class="head-subtitle">
+						FLASH DEALS
+					</div>
+					<div class="head-icon">
+						<i class="iconfont">&#xe66c;</i>
+					</div>
+					<div class="head-desc">
+						本场距离结束还剩
+					</div>
+					<div class="head-time ">
+						<span class="cdItem cd-hour">
+							03
+						</span>
+						<span class="cdItem cd-minute">
+							00
+						</span>
+						<span class="cdItem cd-second">
+							00
+						</span>
+					</div>
+				</a>
+			</div>
+			
+			<div class="fl sk-body">
+				<div class="swiper-container" id="secKill-area">
+				    <div class="swiper-wrapper">
+				    </div>
+				    
+				    <!-- 如果需要导航按钮 -->
+				    <div class="swiper-button-prev sk-prev"><i class="iconfont">&#xe600;</i></div>
+				    <div class="swiper-button-next sk-next"><i class="iconfont">&#xe601;</i></div>
+				    
+				</div>
+			</div>
+			<div class="fl sk-right">
+				<div class="swiper-container" id="secKill-right">
+					<div class="swiper-wrapper">
+					</div>
+					<!-- 如果需要分页器 -->
+					<div class="swiper-pagination sk-right-pagination"></div>
+				</div>
+			</div>
+		</div>
+		<!--<script src="js/index.js" type="text/javascript" charset="utf-8"></script>-->
+		<script type="text/javascript">
+				require(['index'], function (){
+	　　});
+		</script>
 	</body>
 
 </html>
