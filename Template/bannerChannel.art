@@ -1,0 +1,34 @@
+<% for(var i=0; i<jsondata.length;i++){ %>
+		<div class="pop-detail" id="detail<%=i%>" >
+			<div class="detail-left">
+				<div class="leftDetail-h">
+					<% for(var j=0; j<jsondata[i].specialChannel.length;j++){ %>
+						<a href="javascript:void(0)"><%= jsondata[i].specialChannel[j]%></a>
+					<% } %>
+				</div>
+				<div class="leftDetail-b">
+					<% for(var k=0; k<jsondata[i].content.length;k++){ %>
+						<dl class="clearfix">
+							<dt><a href="javascript:void(0)"><%= jsondata[i].content[k].title%> > </a></dt>
+								<% for(var z=0; z<jsondata[i].content[k].message.length;z++){ %>
+									<dd><a href="javascript:void(0)"><%= jsondata[i].content[k].message[z]%></a></dd>
+								<% } %>
+						</dl>
+					<% } %>
+							
+				</div>
+			</div>
+			<div class="detail-right">
+				<div class="rigthDetail-t">
+					<% for(var n=0; n<jsondata[i].sImgs.length;n++){ %>
+						<a href="javascript:void(0)"><img src="<%= jsondata[i].sImgs[n]%>"/></a>
+					<% } %>
+				</div>
+				<div class="rigthDetail-b">
+					<% for(var m=0; m<jsondata[i].bImgs.length;m++){ %>
+						<a href="javascript:void(0)"><img src="<%= jsondata[i].bImgs[m]%>" /></a>
+					<% } %>
+				</div>
+			</div>
+		</div>
+<% } %>
