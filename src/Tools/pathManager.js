@@ -8,7 +8,9 @@ moduleExports.jsDir = path.resolve(moduleExports.staticRootDir,'./js');
 moduleExports.templateDir = path.resolve(moduleExports.staticRootDir,'./Template');//模板目录
 moduleExports.vendorDir = path.resolve(moduleExports.staticRootDir, './Vendor'); // 存放所有不能用npm管理的第三方库
 moduleExports.pagesDir = path.resolve(moduleExports.srcRootDir, './Pages'); // 存放各个页面独有的部分，如入口文件、只有该页面使用到的css、模板文件等
+
 moduleExports.publicDir = path.resolve(moduleExports.srcRootDir, './PublicResource'); // 存放各个页面使用到的公共资源
+moduleExports.imagesDir = path.resolve(moduleExports.publicDir, './images');
 moduleExports.configDir = path.resolve(moduleExports.publicDir, './Config'); // 存放各种配置文件
 
 moduleExports.dllDir = path.resolve(moduleExports.srcRootDir, './Dll'); // 存放由各种不常改变的js/css打包而来的dll
@@ -19,6 +21,4 @@ moduleExports.layoutDir = path.resolve(moduleExports.publicDir, './layout'); // 
 //
 //// 生成文件目录
 moduleExports.buildDir = path.resolve(moduleExports.staticRootDir, './Build'); // 存放编译后生成的所有代码、资源（图片、字体等，虽然只是简单的从源目录迁移过来）
-moduleExports.devBuildDir = path.resolve(moduleExports.staticRootDir, './Build/Dev');
-moduleExports.distBuildDir = path.resolve(moduleExports.staticRootDir, './Build/Dist');
 module.exports = moduleExports;

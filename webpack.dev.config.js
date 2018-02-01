@@ -1,4 +1,5 @@
 require('./npm-scripts/before-build.script');
+
 module.exports = {
 	devtool: 'eval-source-map', //开发阶段使用，生产不要用
 	
