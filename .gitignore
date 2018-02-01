@@ -2,3 +2,5 @@
 .idea/
 Build/
 .vscode/
+node_modules/
+.project
