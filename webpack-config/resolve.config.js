@@ -8,8 +8,9 @@ module.exports = {
     configDir: pathManager.configDir,
     vendorDir: pathManager.vendorDir,
 	jsDir : pathManager.jsDir,
-	templateDir : pathManager.TemplateDir,
+	templateDir : pathManager.templateDir,
 	srcRootDir : pathManager.srcRootDir,
+	
     /* vendor */
     /* bootstrap 相关 */
 //  metisMenu: path.resolve(dirVars.vendorDir, 'metisMenu/'),
