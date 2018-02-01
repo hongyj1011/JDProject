@@ -1,0 +1,20 @@
+<% for(var i=0; i<jsondata.length;i++){ %>
+<div class="swiper-slide">
+	<a class="skItem" href="#">
+		<img src="<%= jsondata[i].img%>" />
+		<p>
+			<%= jsondata[i].title %>
+		</p>
+		<div class="sk-price">
+			<span class="sk-price-new sk-price-item">
+							<i>￥</i>
+							<span><%= jsondata[i].newPrice %></span>
+			</span>
+			<span class="sk-price-origin sk-price-item">
+							<i>￥</i>
+							<span><%= jsondata[i].originPrice%></span>
+			</span>
+		</div>
+	</a>
+</div>
+<% } %>
