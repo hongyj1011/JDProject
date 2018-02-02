@@ -7,9 +7,8 @@ module.exports = {
     iconfontDir: path.resolve(pathManager.publicDir, 'iconfont/'),
     configDir: pathManager.configDir,
     vendorDir: pathManager.vendorDir,
-	jsDir : pathManager.jsDir,
-	templateDir : pathManager.templateDir,
-	srcRootDir : pathManager.srcRootDir,
+    srcRootDir : pathManager.srcRootDir,
+    imagesDir : pathManager.imagesDir,
 	
     /* vendor */
     /* bootstrap 相关 */
