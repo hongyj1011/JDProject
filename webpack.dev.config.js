@@ -5,7 +5,7 @@ module.exports = {
 	
 	entry: require('./webpack-config/entry.config.js'),
 
-	output: require('./webpack-config/output.config.js'),
+	output: require('./webpack-config/output.dev.config.js'),
 
 	module: require('./webpack-config/module.dev.config.js'),
 

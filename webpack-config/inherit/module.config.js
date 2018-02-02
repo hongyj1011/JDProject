@@ -1,4 +1,6 @@
 var pathManager = require('../../src/Tools/pathManager.js');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var config = require('../Tools/base.config.js');
 module.exports = {
 	rules: [{
 		test: /(\.jsx|\.js)$/,
@@ -12,20 +14,51 @@ module.exports = {
 		},
 		exclude: /node_modules/
 	},
-	{ test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=8192&name=./images/[hash:8].[name].[ext]'},
-	// {
-	// 	// 图片加载器，雷同file-loader，更适合图片，可以将较小的图片转成base64，减少http请求
-	// 	// 如下配置，将小于8192byte的图片转成base64码
-	// 	test: /\.(png|jpg|gif|webp|svg)$/,
-	// 	// include: pathManager.srcRootDir,
-	// 	// loader: 'url-loader?limit=8192&name=./static/img/[hash].[ext]',
-	// 	loader: 'url-loader',
-	// 	options: {
-	// 		limit: 8192,
-	// 		name: './PublicResource/img/[hash].[ext]',
-	// 	}
-	// },
-
+	{
+		test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+		use: [
+			{
+				loader: 'url-loader',
+				options: {
+					limit: 10000,
+					name: config.assetsSubDirectory + '/img/[name].[hash:9].[ext]',
+					publicPath: process.env.NODE_ENV === 'development'
+						? config.dev.assetsPublicPath
+						: config.build.assetsPublicPath
+				}
+			}
+		]
+	},
+	{
+		test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+		use: [
+			{
+				loader: 'url-loader',
+				options: {
+					limit: 10000,
+					name: config.assetsSubDirectory + '/font/[name].[hash:9].[ext]',
+					publicPath: process.env.NODE_ENV === 'development'
+						? config.dev.assetsPublicPath
+						: config.build.assetsPublicPath
+				}
+			}
+		]
+	},
+	{
+		test: /\.css$/,
+		use: ExtractTextPlugin.extract({
+			fallback: 'style-loader',
+			use: [
+				{
+					loader: 'css-loader',
+					options: {
+					  minimize: process.env.NODE_ENV === 'production',
+					  importLoaders: 1
+					},
+				}
+			]
+		})
+	},
 	{
 		test: /\.art$/,
 		loader: "art-template-loader",

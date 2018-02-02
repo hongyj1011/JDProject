@@ -1,5 +1,8 @@
 (function () {
 	// require('file-loader?name=html-[hash:6].[ext]!imagesDir/001.jpg');
+	// require('!!file-loader?name=index.html!../../../index.html');
+	require('./index.css');
+	require('../../PublicResource/images/001.jpg');
 	var Mock = require('vendorDir/mock-min.js');
 	var Swiper = require("vendorDir/swiper.min.js");
 	require("vendorDir/jquery.js");

@@ -1,10 +1,8 @@
 var path = require('path');
-var pathManager = require('../src/Tools/pathManager.js');
-var pageArr = require('./Base/page-entries.config.js');
-var configEntry = {};
-
-pageArr.forEach((page) => {
-   configEntry[page] = path.resolve(pathManager.pagesDir, page + '/page');
+var config = require('./Tools/base.config.js');
+var entries = {};
+config.entries.forEach(function (entry) {
+  entries[entry.entryName] = entry.entry;
 });
 
-module.exports = configEntry;
+module.exports = entries;
