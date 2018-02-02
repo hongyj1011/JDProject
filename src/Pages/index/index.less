@@ -1,4 +1,4 @@
-@imagesDir: "../../PublicResource/images";
+@imagesDir: "../../Assets/images";
 @navHeight: 30px;
 @content: 1190px;
 @navFontSize: 10px;
@@ -43,11 +43,11 @@ body {
 
 @font-face {
   font-family: 'iconfont';
-  src: url('/src/PublicResource/iconFonts/iconfont.eot');
-  src: url('/src/PublicResource/iconFonts/iconfont.eot?#iefix') format('embedded-opentype'),
-  url('/src/PublicResource/iconFonts/iconfont.woff') format('woff'),
-  url('/src/PublicResource/iconFonts//iconfont.ttf') format('truetype'),
-  url('/src/PublicResource/iconFonts/iconfont.svg#iconfont') format('svg');
+  src: url('../../Assets/iconFonts/iconfont.eot');
+  src: url('../../Assets/iconFonts/iconfont.eot?#iefix') format('embedded-opentype'),
+  url('../../Assets/iconFonts/iconfont.woff') format('woff'),
+  url('../../Assets/iconFonts//iconfont.ttf') format('truetype'),
+  url('../../Assets/iconFonts/iconfont.svg#iconfont') format('svg');
 }
 .iconfont{
   font-family:"iconfont" !important;
@@ -89,7 +89,8 @@ body {
         display: block;
         height: 80px;
         background-color: red;
-        background: url('@{imagesDir}/JDBanner.jpg') no-repeat 50% 0;
+        // background: url('@{imagesDir}/JDBanner.jpg') no-repeat 50% 0;
+        background: url('../../Assets/images/JDBanner.jpg') no-repeat 50% 0;
     }
 }
 

@@ -21,7 +21,7 @@ module.exports = {
 				loader: 'url-loader',
 				options: {
 					limit: 10000,
-					name: config.assetsSubDirectory + '/img/[name].[hash:9].[ext]',
+					name: config.assetsSubDirectory + '/images/[name].[hash:9].[ext]',
 					publicPath: process.env.NODE_ENV === 'development'
 						? config.dev.assetsPublicPath
 						: config.build.assetsPublicPath
@@ -36,7 +36,7 @@ module.exports = {
 				loader: 'url-loader',
 				options: {
 					limit: 10000,
-					name: config.assetsSubDirectory + '/font/[name].[hash:9].[ext]',
+					name: config.assetsSubDirectory + '/iconFonts/[name].[hash:9].[ext]',
 					publicPath: process.env.NODE_ENV === 'development'
 						? config.dev.assetsPublicPath
 						: config.build.assetsPublicPath

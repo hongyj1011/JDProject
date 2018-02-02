@@ -4,6 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var pathManager = require('../../src/Tools/pathManager.js');
 // var pageArr = require('../Base/page-entries.config.js');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 var config = require('../Tools/base.config.js');
 
 var configPlugins = [
@@ -17,7 +18,10 @@ new ExtractTextPlugin({
   filename: config.assetsSubDirectory + '/css/[name].[contenthash:9].css',
   allChunks: true
 }),
-
+new CopyWebpackPlugin([{
+  from: pathManager.publicDir,
+  to:config.assetsSubDirectory
+}])
 
 ];
 config.entries.forEach(function (entry) {

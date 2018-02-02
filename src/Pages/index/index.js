@@ -1,8 +1,7 @@
 (function () {
-	// require('file-loader?name=html-[hash:6].[ext]!imagesDir/001.jpg');
-	// require('!!file-loader?name=index.html!../../../index.html');
 	require('./index.css');
-	require('../../PublicResource/images/001.jpg');
+	require('vendorDir/reset.css');
+	require('vendorDir/swiper.min.css');
 	var Mock = require('vendorDir/mock-min.js');
 	var Swiper = require("vendorDir/swiper.min.js");
 	require("vendorDir/jquery.js");
@@ -47,17 +46,23 @@
 
 	var initObj = {
 		initSiteNav: function () {
+			Mock.mock(/siteNav.php/, {
+				'jsondata|4': [{
+					'title': '@cword(4)',
+					'content|15-20': ['@cword(2,4)']
+				}]
+			});
 			$.ajax({
 				url: "/PHP/siteNav.php",
 				type: "POST",
 				dataType: "json",
 				success: function (data) {
 
-					var jsonArr = {
-						jsondata: data
-					};
-					var render = require('templateDir/siteNavModel.art');
-					var html = render(jsonArr);
+					// var jsonArr = {
+					// 	jsondata: data
+					// };
+					var render = require('./Template/siteNavModel.art');
+					var html = render(data);
 					$(".siteNav div").append(html);
 				},
 				error: function (error) {
@@ -109,7 +114,7 @@
 					//										};
 					//					var html = template('bannerChannel', jsonArr);
 					//					var html = template('bannerChannel', data);
-					var render = require('templateDir/bannerChannel.art');
+					var render = require('./Template/bannerChannel.art');
 					var html = render(data);
 					$(".popDiv").append(html);
 				},
@@ -161,7 +166,7 @@
 				}]
 			});
 			//			var html = template('secKillModel', data);
-			var render = require('templateDir/secKillModel.art');
+			var render = require('./Template/secKillModel.art');
 			var html = render(data);
 			$("#secKill-area .swiper-wrapper").append(html);
 			var mySwiper = new Swiper('#secKill-area', {

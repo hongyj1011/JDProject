@@ -13,8 +13,8 @@ body {
 }
 @font-face {
   font-family: 'iconfont';
-  src: url('/src/PublicResource/iconFonts/iconfont.eot');
-  src: url('/src/PublicResource/iconFonts/iconfont.eot?#iefix') format('embedded-opentype'), url('/src/PublicResource/iconFonts/iconfont.woff') format('woff'), url('/src/PublicResource/iconFonts//iconfont.ttf') format('truetype'), url('/src/PublicResource/iconFonts/iconfont.svg#iconfont') format('svg');
+  src: url('../../Assets/iconFonts/iconfont.eot');
+  src: url('../../Assets/iconFonts/iconfont.eot?#iefix') format('embedded-opentype'), url('../../Assets/iconFonts/iconfont.woff') format('woff'), url('../../Assets/iconFonts//iconfont.ttf') format('truetype'), url('../../Assets/iconFonts/iconfont.svg#iconfont') format('svg');
 }
 .iconfont {
   font-family: "iconfont" !important;
@@ -58,7 +58,7 @@ body {
   display: block;
   height: 80px;
   background-color: red;
-  background: url('../../PublicResource/images/JDBanner.jpg') no-repeat 50% 0;
+  background: url('../../Assets/images/JDBanner.jpg') no-repeat 50% 0;
 }
 .nav {
   width: 100%;
@@ -179,7 +179,7 @@ body {
   width: 60px;
   height: 60px;
   background-size: 374px 339.5px;
-  background-image: url('../../PublicResource/images/sprite.head@2x.png');
+  background-image: url('../../Assets/images/sprite.head@2x.png');
   background-position: -192.5px -42.5px;
 }
 .myJD {
