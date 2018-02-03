@@ -14,11 +14,13 @@ new webpack.optimize.CommonsChunkPlugin({
   filename: config.assetsSubDirectory + '/js/commons/[name].[chunkhash].js',
   minChunks: 3,
 }),
+
 /* 抽取出webpack的runtime代码()，避免稍微修改一下入口文件就会改动commonChunk，导致原本有效的浏览器缓存失效 */
 new webpack.optimize.CommonsChunkPlugin({
   name: 'webpack-runtime',
   filename: config.assetsSubDirectory + '/js/commons/webpack-runtime.[hash].js',
 }),
+
 new ExtractTextPlugin({
   filename: config.assetsSubDirectory + '/css/[name].[contenthash:9].css',
   allChunks: true
@@ -39,7 +41,7 @@ config.entries.forEach(function (entry) {
   var options = {
     filename: entry.filename,
     template: entry.template,
-    chunks: ['webpack-runtime','vendor',entry.entryName],
+    chunks: ['commonCss','webpack-runtime','vendor',entry.entryName],
     env: process.env.NODE_ENV === 'development'
       ? JSON.parse(config.dev.env.NODE_ENV)
       : JSON.parse(config.build.env.NODE_ENV)

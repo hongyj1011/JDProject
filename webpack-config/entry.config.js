@@ -5,5 +5,6 @@ var entries = {};
 config.entries.forEach(function (entry) {
   entries[entry.entryName] = entry.entry;
 });
-entries["vendor"] = [pathManager.vendorDir+'/jquery.js'];
+entries["vendor"] = ['vendorDir/jquery.js','vendorDir/mock-min.js','vendorDir/swiper.min.js'];
+entries["commonCss"] = ['vendorDir/reset.css','vendorDir/swiper.min.css'];
 module.exports = entries;
