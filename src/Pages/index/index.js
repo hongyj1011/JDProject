@@ -1,4 +1,6 @@
 (function () {
+	require('vendorDir/reset.css');
+	require('vendorDir/swiper.min.css');
 	require('./index.css');
 	var Mock = require('vendorDir/mock-min.js');
 	var Swiper = require("vendorDir/swiper.min.js");

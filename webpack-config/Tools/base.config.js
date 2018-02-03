@@ -60,7 +60,6 @@ function pageWalk (pageName) {
 
 module.exports = {
   entries: entriesConfig,
-  // assetsRoot: path.resolve(__dirname, '../dist'),
   assetsRoot : pathManager.buildDir,
   assetsSubDirectory: 'Assets',
   commonsChunkName: ['vendor', 'manifest'],
