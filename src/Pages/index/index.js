@@ -1,7 +1,7 @@
 (function () {
-	require('./index.css');
 	require('vendorDir/reset.css');
 	require('vendorDir/swiper.min.css');
+	require('./index.css');
 	var Mock = require('vendorDir/mock-min.js');
 	var Swiper = require("vendorDir/swiper.min.js");
 	require("vendorDir/jquery.js");
@@ -40,7 +40,7 @@
 		$(".popDiv").hide();
 	});
 	if (!IS_PRODUCTION) {
-		console.log('如果你看到这个Log，那么这个版本实际上是开发用的版本');
+		console.log('如果你看到这个Log，实际上是开发版本');
 
 	}
 

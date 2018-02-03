@@ -60,10 +60,9 @@ function pageWalk (pageName) {
 
 module.exports = {
   entries: entriesConfig,
-  // assetsRoot: path.resolve(__dirname, '../dist'),
   assetsRoot : pathManager.buildDir,
   assetsSubDirectory: 'Assets',
-  commonsChunkName: ['app', 'vendor', 'manifest'],
+  commonsChunkName: ['vendor', 'manifest'],
   dev: {
     env: require('./dev.env.js'),
     // assetsPublicPath: '/'
