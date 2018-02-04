@@ -21,10 +21,10 @@ module.exports = {
 				loader: 'url-loader',
 				options: {
 					limit: 10000,
-					name: config.assetsSubDirectory + '/images/[name].[hash:9].[ext]',
-					publicPath: process.env.NODE_ENV === 'development'
-						? config.dev.assetsPublicPath
-						: config.build.assetsPublicPath
+					// name: config.assetsSubDirectory + '/images/[name].[hash:9].[ext]',
+					name: '[name].[hash:9].[ext]',
+					
+					outputPath: config.assetsSubDirectory+'/images/'
 				}
 			}
 		]
@@ -48,13 +48,25 @@ module.exports = {
 		test: /\.css$/,
 		use: ExtractTextPlugin.extract({
 			fallback: 'style-loader',
+			// publicPath:'../../../',
 			use: [
 				{
 					loader: 'css-loader',
 					options: {
+						// autoprefixer: true,
 						minimize: process.env.NODE_ENV === 'production',
 						importLoaders: 1
 					},
+					
+				},
+				{
+					loader: "postcss-loader",
+					options: {
+						sourceMap: true,
+						config: {
+						  path: 'postcss.config.js'  // 这个得在项目根目录创建此文件
+						}
+					}
 				}
 			]
 		})

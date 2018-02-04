@@ -65,6 +65,7 @@ module.exports = {
   commonsChunkName: ['vendor', 'manifest'],
   dev: {
     env: require('./dev.env.js'),
+    assetsPublicPath: '/Build/'
     // assetsPublicPath: '/'
   },
   build: {
