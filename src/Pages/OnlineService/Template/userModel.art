@@ -1,0 +1,6 @@
+<div class="mySpeak clearfix">
+    <img class="icon" src="../../../Assets/images/userIcon.jpg"/>
+    <span class="speak">
+        <%= userBody%>
+    </span>
+</div>

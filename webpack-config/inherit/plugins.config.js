@@ -11,7 +11,7 @@ var configPlugins = [
 /* 抽取出所有通用的部分 */
 new webpack.optimize.CommonsChunkPlugin({
   name: config.commonsChunkName,      // 需要注意的是，chunk的name不能相同！！！
-  filename: config.assetsSubDirectory + '/js/commons/[name].[chunkhash].js',
+  filename: config.assetsSubDirectory + '/js/commons/[name].[hash].js',
   minChunks: 2,
 }),
 
@@ -27,7 +27,7 @@ new ExtractTextPlugin({
 }),
 
 new CopyWebpackPlugin([{
-  from: pathManager.publicDir,
+  from: pathManager.assetsDir,
   to:config.assetsSubDirectory
 }]),
 

@@ -1,0 +1,97 @@
+.warp {
+  width: 70%;
+  margin: 50px auto;
+}
+.serviceHead {
+  line-height: 40px;
+  text-align: center;
+  color: whitesmoke;
+  background-color: #4E4E4E;
+}
+.serviceFoot input[type="text"] {
+  line-height: 40px;
+  width: 90%;
+  float: left;
+  box-sizing: border-box;
+}
+.serviceFoot a {
+  float: left;
+  box-sizing: border-box;
+  text-decoration: none;
+  background-color: #00BFFF;
+  line-height: 44px;
+  height: 44px;
+  text-align: center;
+  color: white;
+  width: 10%;
+}
+.serviceBody {
+  background-color: #F3F5F7;
+  min-height: 500px;
+  padding: 10px;
+  max-height: 500px;
+  overflow: scroll;
+}
+.icon {
+  display: inline-block;
+  margin: 15px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.serviceIcon {
+  background-image: url("../../Assets/images/cusomSer.jpeg");
+}
+.userIcon {
+  background-image: url("../../Assets/images/userIcon.jpg");
+}
+.speak {
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+.other span {
+  line-height: 20px;
+}
+.other span:before {
+  content: " ";
+  width: 0px;
+  height: 0px;
+  border: 5px solid #000;
+  border-color: transparent white transparent transparent;
+  position: absolute;
+  left: -10px;
+  top: 10px;
+}
+.mySpeak img {
+  float: right;
+}
+.mySpeak span {
+  float: right;
+  line-height: 20px;
+  margin-top: 20px;
+  background: white;
+  max-width: 300px;
+  background-color: palegreen;
+}
+.mySpeak span:before {
+  content: " ";
+  width: 0px;
+  height: 0px;
+  border: 5px solid #000;
+  border-color: transparent transparent transparent palegreen;
+  position: absolute;
+  left: 100%;
+  top: 10px;
+}
+.offline {
+  text-align: center;
+}
+.offline span {
+  padding: 5px;
+  background-color: #A5A5A5;
+  border-radius: 5px;
+}

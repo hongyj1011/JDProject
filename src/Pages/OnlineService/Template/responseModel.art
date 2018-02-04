@@ -1,0 +1,6 @@
+<div class="other">
+    <img class="icon" src="../../../Assets/images/cusomSer.jpeg"/>
+    <span class="speak">
+        <%= respond%>
+    </span>
+</div>
