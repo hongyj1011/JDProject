@@ -36,7 +36,7 @@
     "profile": "./node_modules/.bin/webpack --colors --profile --display-modules --config ./webpack.dev.config.js",
     "dll": "./node_modules/.bin/webpack --progress --colors --config ./webpack-dll.config.js",
     "analyse": "webpack --json > ./build/stats.json && webpack-bundle-analyzer --port 8989 ./build/stats.json",
-    "analyze": "npm run analyse"
+    "analyze": "npm run analyse",
   },
   "repository": {
     "type": "git",
