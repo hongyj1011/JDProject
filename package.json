@@ -15,6 +15,7 @@
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "chunk-manifest-webpack-plugin": "^1.1.2",
     "clean-webpack-plugin": "^0.1.18",
     "copy-webpack-plugin": "^4.3.1",
     "css-loader": "^0.28.9",
@@ -22,6 +23,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "html-webpack-plugin": "^2.30.1",
+    "image-webpack-loader": "^4.0.0",
     "postcss-loader": "^2.0.10",
     "precss": "^3.1.0",
     "style-loader": "^0.20.1",
@@ -30,13 +32,13 @@
     "webpack-merge": "^4.1.1"
   },
   "scripts": {
-    "build": "./node_modules/.bin/webpack --progress --colors --bail",
-    "dev": "./node_modules/.bin/webpack --progress --colors --config ./webpack.dev.config.js",
-    "start": "./node_modules/.bin/webpack-dev-server --config ./webpack.dev.config.js --open --hot",
-    "profile": "./node_modules/.bin/webpack --colors --profile --display-modules --config ./webpack.dev.config.js",
-    "dll": "./node_modules/.bin/webpack --progress --colors --config ./webpack-dll.config.js",
-    "analyse": "webpack --json > ./build/stats.json && webpack-bundle-analyzer --port 8989 ./build/stats.json",
-    "analyze": "npm run analyse"
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack --progress --colors --bail",
+    "dev": "NODE_ENV=development ./node_modules/.bin/webpack --progress --colors --config ./webpack.dev.config.js",
+    "start": "NODE_ENV=development ./node_modules/.bin/webpack-dev-server --config ./webpack.dev.config.js --open --hot",
+    "profile": "NODE_ENV=development ./node_modules/.bin/webpack --colors --profile --display-modules --config ./webpack.dev.config.js",
+    "dll": "NODE_ENV=development ./node_modules/.bin/webpack --progress --colors --config ./webpack-dll.config.js",
+    "analyse": "NODE_ENV=development webpack --json > ./build/stats.json && webpack-bundle-analyzer --port 8989 ./build/stats.json",
+    "analyze": "NODE_ENV=development npm run analyse"
   },
   "repository": {
     "type": "git",

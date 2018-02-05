@@ -62,16 +62,14 @@ module.exports = {
   entries: entriesConfig,
   assetsRoot : pathManager.buildDir,
   assetsSubDirectory: 'Assets',
-  commonsChunkName: ['vendor', 'manifest'],
+  commonsChunkName: ['commons','vendor', 'manifest'],
   dev: {
-    env: require('./dev.env.js'),
     assetsPublicPath: '/Build/'
     // assetsPublicPath: '/'
   },
   build: {
-    env: require('./prod.env.js'),
     // 可配置 CDN
     // assetsPublicPath: 'https://monine.github.io/webpack-multi-page/dist/'
-    assetsPublicPath: '/'
+    assetsPublicPath: '/Build/'
   }
 }

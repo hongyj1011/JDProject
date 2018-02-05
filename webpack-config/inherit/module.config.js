@@ -23,9 +23,11 @@ module.exports = {
 					limit: 10000,
 					// name: config.assetsSubDirectory + '/images/[name].[hash:9].[ext]',
 					name: '[name].[hash:9].[ext]',
-					
 					outputPath: config.assetsSubDirectory+'/images/'
 				}
+			},
+			{
+				loader:'image-webpack-loader'//图片压缩
 			}
 		]
 	},
@@ -53,7 +55,6 @@ module.exports = {
 				{
 					loader: 'css-loader',
 					options: {
-						// autoprefixer: true,
 						minimize: process.env.NODE_ENV === 'production',
 						importLoaders: 1
 					},
