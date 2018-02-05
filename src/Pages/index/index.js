@@ -62,7 +62,7 @@
 					// var jsonArr = {
 					// 	jsondata: data
 					// };
-					var render = require('./Template/siteNavModel.art');
+					var render = require('./Template/siteNavModel.ejs');
 					var html = render(data);
 					$(".siteNav div").append(html);
 				},
@@ -115,7 +115,8 @@
 					//										};
 					//					var html = template('bannerChannel', jsonArr);
 					//					var html = template('bannerChannel', data);
-					var render = require('./Template/bannerChannel.art');
+					var render = require('./Template/bannerChannel.ejs');
+					console.log('输出='+render);
 					var html = render(data);
 					$(".popDiv").append(html);
 				},
@@ -167,7 +168,7 @@
 				}]
 			});
 			//			var html = template('secKillModel', data);
-			var render = require('./Template/secKillModel.art');
+			var render = require('./Template/secKillModel.ejs');
 			var html = render(data);
 			$("#secKill-area .swiper-wrapper").append(html);
 			var mySwiper = new Swiper('#secKill-area', {

@@ -18,7 +18,7 @@ var Mock = require('vendorDir/mock-min.js');
                 dataType: "json",
                 data:{"content":$(".serviceFoot input").val()},
                 success:function (respondData){
-                    var render = require('./Template/responseModel.art');
+                    var render = require('./Template/responseModel.ejs');
                     var innerHTML = render(respondData);
                     $(".serviceBody").append(innerHTML);
                 },
@@ -30,7 +30,7 @@ var Mock = require('vendorDir/mock-min.js');
                 }
             });
             var userData = {userBody:$(".serviceFoot input").val()};
-            var render = require('./Template/userModel.art');
+            var render = require('./Template/userModel.ejs');
             var userHtml = render(userData);
             $(".serviceBody").append(userHtml);
            

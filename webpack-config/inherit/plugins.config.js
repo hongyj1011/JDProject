@@ -21,10 +21,10 @@ new ExtractTextPlugin({
   allChunks: true
 }),
 
-new CopyWebpackPlugin([{
-  from: pathManager.assetsDir,
-  to:config.assetsSubDirectory
-}]),
+// new CopyWebpackPlugin([{
+//   from: pathManager.assetsDir,
+//   to:config.assetsSubDirectory
+// }]),
 
 /* HashedModuleIdsPlugin 这个插件，他是根据模块的相对路径生成一个长度只有四位的字符串作为模块的 module id ，
 这样就算引入了新的模块，也不会影响 module id 的值，只要模块的路径不改变的话。 */
