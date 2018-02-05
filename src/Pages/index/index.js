@@ -18,9 +18,9 @@
 	$(".location a").on("click", function () {
 		$(this).addClass("currentCity").parent().siblings().children("a").removeClass("currentCity");
 		$(".location-Place span").text($(this).text());
-		
+
 	});
-	
+
 	var line = $(".pubNotice-line");
 	var pubBody = $(".pubBody");
 	$(".pubNotice-01").mouseover(function () {
@@ -42,7 +42,6 @@
 	});
 	if (!IS_PRODUCTION) {
 		console.log('如果你看到这个Log，实际上是开发版本');
-
 	}
 
 	var initObj = {
@@ -58,10 +57,6 @@
 				type: "POST",
 				dataType: "json",
 				success: function (data) {
-
-					// var jsonArr = {
-					// 	jsondata: data
-					// };
 					var render = require('./Template/siteNavModel.ejs');
 					var html = render(data);
 					$(".siteNav div").append(html);
@@ -110,13 +105,7 @@
 				type: "GET",
 				dataType: "json",
 				success: function (data) {
-					//										var jsonArr = {
-					//											jsondata: data
-					//										};
-					//					var html = template('bannerChannel', jsonArr);
-					//					var html = template('bannerChannel', data);
 					var render = require('./Template/bannerChannel.ejs');
-					console.log('输出='+render);
 					var html = render(data);
 					$(".popDiv").append(html);
 				},
@@ -167,7 +156,6 @@
 					'originPrice|10-5000.2': 100
 				}]
 			});
-			//			var html = template('secKillModel', data);
 			var render = require('./Template/secKillModel.ejs');
 			var html = render(data);
 			$("#secKill-area .swiper-wrapper").append(html);

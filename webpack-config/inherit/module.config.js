@@ -57,7 +57,7 @@ module.exports = {
 				use: [{
 						loader: 'css-loader',
 						options: {
-							minimize: process.env.NODE_ENV === 'production',
+							minimize: process.env.NODE_ENV === 'production',//css压缩
 							importLoaders: 1
 						},
 
