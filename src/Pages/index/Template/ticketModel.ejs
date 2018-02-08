@@ -1,0 +1,35 @@
+<div class="swiper-container ticketSwiper">
+    <div class="swiper-wrapper">
+        <% for(var i=0; i<ticketData.length;i++){ %>
+            <a class="swiper-slide ticket-item clearfix">
+                <div class="ticket-icon fl">
+                    <div class="alb-imgs-bg">
+                        <img src="<%= ticketData[i].icon%>">
+                    </div>
+                </div>
+                <div class="ticket-type fr">
+                    <div class="ticket-type-more">
+                        更多<%= ticketData[i].type%>券
+                    </div>
+                </div>
+                <div class="ticket-info">
+                    <div class="ticket-info-price">
+                        <i>¥</i>
+                        <span>
+                            <%= ticketData[i].price%>
+                        </span>
+                    </div>
+                    <div class="ticket-limit">
+                        满
+                        <%= ticketData[i].limit%>可用
+                    </div>
+                    <div class="ticket-desc overHide">
+                        <%= ticketData[i].desc%>
+                    </div>
+                </div>
+
+            </a>
+            <%}%>
+    </div>
+    <div class="swiper-pagination tab-page"></div>
+</div>

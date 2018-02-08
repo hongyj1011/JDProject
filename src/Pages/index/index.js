@@ -6,6 +6,8 @@
 	var Mock = require('vendorDir/mock-min.js');
 	var Swiper = require("vendorDir/swiper.min.js");
 	require("vendorDir/jquery.js");
+	var initObj = require('./initData.js');
+
 	$(".headBanner i").on("click", function () {
 		$(this).parent().hide();
 	});
@@ -43,161 +45,8 @@
 	if (!IS_PRODUCTION) {
 		console.log('如果你看到这个Log，实际上是开发版本');
 	}
-
-	var initObj = {
-		initSiteNav: function () {
-			Mock.mock(/siteNav.php/, {
-				'jsondata|4': [{
-					'title': '@cword(4)',
-					'content|15-20': ['@cword(2,4)']
-				}]
-			});
-			$.ajax({
-				url: "/PHP/siteNav.php",
-				type: "POST",
-				dataType: "json",
-				success: function (data) {
-					var render = require('./Template/siteNavModel.ejs');
-					var html = render(data);
-					$(".siteNav div").append(html);
-				},
-				error: function (error) {
-					$(".siteNav div").append(error.status + error.statusText);
-				}
-			})
-		},
-		initlunBo: function () {
-			var mySwiper = new Swiper('#banner-swiper', {
-				loop: true,
-				autoplay: {
-					delay: 1000
-				},
-				// 如果需要分页器
-				pagination: {
-					el: '.banner-page',
-					clickable: true,
-					renderBullet: function (index, className) {
-						return '<span class="' + className + '">' + (index + 1) + '</span>';
-					},
-				},
-				// 如果需要前进后退按钮
-				navigation: {
-					nextEl: '.banner-next',
-					prevEl: '.banner-prev',
-				},
-			})
-
-		},
-		initBanner: function () {
-			Mock.mock(/bannerChannel.php/, {
-				'jsondata|16': [{
-					'specialChannel|2-8': ['@cword(2,4)'],
-					'content|7-15': [{
-						'title': '@cword(2,4)',
-						'message|5-15': ['@cword(2,6)']
-					}],
-					'sImgs|8': ['@dataImage("83x35","small")'],
-					'bImgs|2': ['@dataImage("168x134","large")']
-				}]
-			});
-			$.ajax({
-				url: "/PHP/bannerChannel.php",
-				type: "GET",
-				dataType: "json",
-				success: function (data) {
-					var render = require('./Template/bannerChannel.ejs');
-					var html = render(data);
-					$(".popDiv").append(html);
-				},
-				error: function (errormsg) {
-					console.log(errormsg);
-				}
-			});
-		},
-		setSKillTimer: function () {
-			var allSecond = 3 * 60 * 60;
-			var hourLabel = $(".cd-hour");
-			var minuteLabel = $(".cd-minute");
-			var secondLabel = $(".cd-second");
-			var timer = setInterval(function () {
-				if (allSecond <= 0) {
-					clearInterval(timer);
-					alert("秒杀结束");
-					return;
-				}
-				allSecond--;
-				var hour = Math.floor(allSecond / 3600);
-				var minute = Math.floor(allSecond % 3600 / 60);
-				var sec = allSecond % 60;
-				if (hour < 10) {
-					hourLabel.text("0" + hour);
-				} else {
-					hourLabel.text(hour);
-				}
-				if (minute < 10) {
-					minuteLabel.text("0" + minute);
-				} else {
-					minuteLabel.text(minute);
-				}
-				if (sec < 10) {
-					secondLabel.text("0" + sec);
-				} else {
-					secondLabel.text(sec);
-				}
-			}, 1000);
-		},
-		initSecKillList: function () {
-			var data = Mock.mock({
-				'jsondata|4-20': [{
-					"id|+1": 1,
-					'img': '@dataImage("140x140","hello")',
-					'title': '@cword(10,20)',
-					'newPrice|10-5000.2': 100,
-					'originPrice|10-5000.2': 100
-				}]
-			});
-			var render = require('./Template/secKillModel.ejs');
-			var html = render(data);
-			$("#secKill-area .swiper-wrapper").append(html);
-			var mySwiper = new Swiper('#secKill-area', {
-				loop: true,
-				slidesPerView: 4,
-				slidesPerGroup: 4,
-				autoplay: {
-					delay: 5000
-				},
-				// 如果需要前进后退按钮
-				navigation: {
-					nextEl: '.sk-next',
-					prevEl: '.sk-prev',
-				},
-			});
-			var rightData = Mock.mock({
-				'lists|2-8': [{
-					'img': '@dataImage("180x260","test")',
-				}]
-			});
-
-			for (var i = 0; i < rightData.lists.length; i++) {
-				var jsonData = rightData.lists[i];
-				var eleHtml = '<div class="swiper-slide"><a class="sk-right-slide"><img src="' + jsonData.img + '"/></a></div>';
-				$("#secKill-right .swiper-wrapper").append(eleHtml);
-			}
-			var secKillRight = new Swiper('#secKill-right', {
-				loop: true,
-				autoplay: {
-					delay: 3000
-				},
-				pagination: {
-					el: '.sk-right-pagination',
-					clickable: true,
-				},
-			})
-		}
-	}
-	initObj.initlunBo();
-	initObj.initSiteNav();
-	initObj.initBanner();
-	initObj.setSKillTimer();
-	initObj.initSecKillList();
+	// 初始化数据
+	initObj.init();
+	
+	
 })();

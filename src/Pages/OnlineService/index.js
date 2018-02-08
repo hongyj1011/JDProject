@@ -3,9 +3,6 @@ require('vendorDir/swiper.min.css');
 require('./index.css');
 require('componentsDir/base.css');
 var Mock = require('vendorDir/mock-min.js');
-// var Swiper = require("vendorDir/swiper.min.js");
-// require("vendorDir/jquery.js");
-
 (function () {
     $(".serviceFoot a").on("click",function  () {
         if ($(".serviceFoot input").val()) {

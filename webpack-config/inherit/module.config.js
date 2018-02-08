@@ -6,10 +6,8 @@ module.exports = {
 			test: /(\.jsx|\.js)$/,
 			use: {
 				loader: "babel-loader",
-				options: {
-					presets: [
-						"env", "react"
-					]
+				query: {
+					presets: ['es2015']
 				}
 			},
 			exclude: /node_modules/
@@ -44,8 +42,7 @@ module.exports = {
 					limit: 10000,
 					name: config.assetsSubDirectory + '/iconFonts/[name].[hash:9].[ext]',
 					publicPath: process.env.NODE_ENV === 'development' ?
-						config.dev.assetsPublicPath :
-						config.build.assetsPublicPath
+						config.dev.assetsPublicPath : config.build.assetsPublicPath
 				}
 			}]
 		},
@@ -57,7 +54,7 @@ module.exports = {
 				use: [{
 						loader: 'css-loader',
 						options: {
-							minimize: process.env.NODE_ENV === 'production',//css压缩
+							minimize: process.env.NODE_ENV === 'production', //css压缩
 							importLoaders: 1
 						},
 

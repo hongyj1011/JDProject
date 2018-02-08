@@ -1,0 +1,30 @@
+<div class="swiper-container albumSwiper">
+    <div class="swiper-wrapper">
+        <% for(var i=0; i<albumData.length;i++){ %>
+            <a class="swiper-slide album-item">
+                <div class="alb-top">
+                    <img src="<%= albumData[i].bgImg%>">
+                </div>
+                <div class="alb-bottom">
+                    <div class="alb-imgs">
+                        <% for(var j=0; j<albumData[i].imgItem.length;j++){ %>
+                        <div class="alb-imgs-bg">
+                            <img src="<%= albumData[i].imgItem[j]%>">
+                        </div>
+                        <%}%>
+                    </div>
+                    <h3><span class="overHide"><%= albumData[i].title%></span></h3>
+                    <p class="overHide"><%= albumData[i].subTitle%></p>
+                    <div class="alb-more">查看更多</div>
+                </div>
+            </a>
+            <%}%>
+    </div>
+    <div class="swiper-pagination tab-page"></div>
+</div>
+<div id="btn-prev" class="swiper-button-prev alb-prev">
+    <i class="iconfont">&#xe934;</i>
+</div>
+<div id="btn-next" class="swiper-button-next  alb-next">
+    <i class="iconfont">&#xe94d;</i>
+</div>
