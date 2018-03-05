@@ -12,10 +12,23 @@ var initObj = {
     // 初始化网站导航数据
     initSiteNav: function () {
         Mock.mock(/text.PHP/, {
-            'jsondata|4': [{
+            'jsondata': [{
                 'title': '@cword(4)',
-                'content|15-20': ['@cword(2,4)']
-            }]
+                'content|20': ['@cword(2,4)']
+            },
+            {
+                'title': '@cword(4)',
+                'content|12-15': ['@cword(2,4)']
+            },
+            {
+                'title': '@cword(4)',
+                'content|12-15': ['@cword(2,4)']
+            },
+            {
+                'title': '@cword(4)',
+                'content|13-15': ['@cword(2,4)']
+            }
+        ]
         });
         $.ajax({
             url: "text.PHP",
